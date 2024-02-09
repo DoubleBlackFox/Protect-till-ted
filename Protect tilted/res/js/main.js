@@ -1,9 +1,10 @@
 import { Enemy } from "./ui/entities.js";
 import { BackGround } from "./ui/basic-ui.js";
-const battleBus = new Enemy("BattleBus", 244, 1,1,100,50);
-const fnkid = new Enemy("fnkid", 0,1,2,30,500);
-console.log(battleBus);
+
+
 const background = new BackGround();
+
+const enemies = [];
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -44,18 +45,52 @@ const enemy = {
 };
 
 const update = () => {
-  battleBus.update();
-  fnkid.update();
+ enemies.map((a) => {
+a.update();
+ })
 };
 const render = () => {
-  battleBus.draw(ctx);
-  fnkid.draw(ctx);
+  enemies.map((a) =>{
+    a.draw(ctx)
+  })
 };
 const fps = () => {};
 
-window.onload = () => {
+const loadData = async () =>  {
+  const entitiesFile = await fetch("./res/data/entities.json")
+  const data = await entitiesFile.json();
+  Enemy.entitiesData = data
+}
+const genEnemies = ()  =>{
+  Enemy.entitiesData.map((a) => {
+    //push - prida novou vec do pole
+    enemies.push(new Enemy(
+      a.name,
+      a.hp,
+      a.dmg,
+      a.imagePath,
+      a.width,
+      a.height,
+      a.velocity,
+      a.type
+      )) 
+  })
+}
+
+window.onload =async () => {
+  await loadData();
+
+  console.log(Enemy.entitiesData);
+  genEnemies();
+  console.log(enemies);
   window.requestAnimationFrame(gameloop);
 };
+
+
+
+
+
+
 /*
 const battleBus = new Image();
 battleBus.src = "./res/img/battle_bus.png";

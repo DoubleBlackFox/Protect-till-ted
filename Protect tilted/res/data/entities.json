@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Plane",
+    "hp": 100,
+    "dmg": 10,
+    "imagePath": "./res/img/enemies/x4 storming.png",
+    "width": 100,
+    "height": 120,
+    "velocity": 9,
+    "type": "air"
+  },
+
+  {
+    "name": "jirka",
+    "hp": 50,
+    "dmg": 25,
+    "imagePath": "./res/img/enemies/BOSS.png",
+    "width": 250,
+    "height": 300,
+    "velocity": 1,
+    "type": "ground"
+  },
+
+  {
+    "name": "Vladimir",
+    "hp": 2,
+    "dmg": 35,
+    "imagePath": "./res/img/enemies/fnkid.png",
+    "width": 250,
+    "height": 250,
+    "velocity": 2,
+    "type": "ground"
+  },
+
+  {
+    "name": "Kevin",
+    "hp": 100,
+    "dmg": 15,
+    "imagePath": "./res/img/enemies/kevin.png",
+    "width": 400,
+    "height": 400,
+    "velocity": 0.25,
+    "type": "air"
+  },
+
+  {
+    "name": "Mecha",
+    "hp": 200,
+    "dmg": 5,
+    "imagePath": "./res/img/enemies/mecha.png",
+    "width": 250,
+    "height": 300,
+    "velocity": 0.5,
+    "type": "ground"
+  }
+]
