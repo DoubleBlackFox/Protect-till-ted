@@ -6,7 +6,7 @@
 
 html,
 body {
-  cursor: none;
+  /*cursor: none;*/
   overflow: hidden;
   margin: 0;
   display: flex;

@@ -52,13 +52,7 @@ static entitiesData;
 
   move() {
     this.position.x += this.velocity.x;
-    if (this.position.x >= 550) {
-      this.velocity.x *= -1;
-    }
-
-    if (this.position.x <= 0) {
-      this.velocity.x *= -1;
-    }
+ 
   }
 }
 
